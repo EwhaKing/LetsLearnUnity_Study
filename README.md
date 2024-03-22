@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=ETYzjbnLixY&list=PLO-mt5Iu5TeYtWvM9eN-xnwRbyUAMW
 중 하나를 골라서 만든다.
 
 
-스터디 시작일 03.25(월)
+스터디 시작일: 03.25(월)
 
 
 참여인원:
@@ -53,4 +53,4 @@ https://www.youtube.com/watch?v=ETYzjbnLixY&list=PLO-mt5Iu5TeYtWvM9eN-xnwRbyUAMW
 |7 주차|10,11 완성|
 |8 주차|구글미트로 서로의 감상평,오류,어려웠던 점 등 리뷰하고 완성한 것 보여주기|
 
--해당 숫자들은 동영상을 클릭했을 때 나오는 재생목록 순서이
+-해당 숫자들은 동영상을 클릭했을 때 나오는 재생목록 순서이다.
