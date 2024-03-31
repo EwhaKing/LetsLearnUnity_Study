@@ -87,6 +87,7 @@
 
   1. 4방향 경계에 닿았는지 판별 할 플래그 변수 추가
   2. OnTriggerEnter2d로 플래그 세우기
+     - 해당 trigger collider에 다른 오브젝트가 닿았는지 리턴
   3. 태그와 이름을 통해 무엇과 충돌한 건지 구별하도록 조건 달기
   4. 플래그 변수를 사용하여 경계이상 넘지 못하도록 값 제한
   5. OnTirggerExit2d로 위에서 세웠던 플래그 원상복귀
@@ -113,3 +114,67 @@
 Start 함수는 스크립트 인스턴스가 활성화된 경우에만 첫 번째 프레임 업데이트 전에 호출되는 것이다.
 
 ** 라는데 진짜 뭔 소린지 모르겠다!!! 이거 누가 좀 알려주세요!!!! 둘이 다르다는 건 알겠는데 그래서 그게 뭔데!!**
+
+****
+
+# Lecture 2
+
+## 1. 준비하기
+
+***Prefab***
+
+- 재활용을 위해 에셋으로 저장된 게임 오브젝트
+- Scene 오브젝트를 에셋 안으로 드래그 하여 프리팹 생성
+  - Hierarchy에서 오브젝트가 푸른색이라면 프리팹이라는 의미이다.
+
+1. 총알 프리팹을 만든다
+2. 충돌 이벤트를 위한 Collider와 Rigidbody 생성
+   - 총알의 rigidbody는 Dynamic으로 설정한다.
+     - Addforce() 로 날릴 것이기 때문
+
+****
+
+## 2. 오브젝트 삭제하기
+
+1. OnTriggerEnter2D를 사용
+2. 총알 제거 경계를 위해 새로운 태그로 조건 걸기
+3. Destroy()로 경계에 닿은 총알 오브젝트 삭제
+  - 매개변수 오브젝트를 삭제하는 함수
+
+****
+
+## 3. 오브젝트 생성
+
+1. 총알 프리팹을 저장할 변수 생성
+   - Instantiate()
+     - Clones the object original and returns the clone.
+2. 위치와 회전 매개변수는 transform 을 사용하여 플레이어의 것을 가져온다.
+   - public static Object Instantiate (Object original, Vector3 position, Quaternion rotation);
+     - postion 에 생성되고 회전 정도는 rotation으로 결정된다.
+3. 리지드바디를 가져와 Addforce로 총알 발사 로직 생성
+  - public void AddForce (Vector2 force, ForceMode2D mode= ForceMode2D.Force);
+    - Apply a force to the rigidbody.
+    - ForceMode
+      - Force : 연속적인 힘으로, 가속을 추가해주는 방식
+      - Impulse : 순간적인 힘으로, 뒤에서 누가 밀듯이 순간적으로 속도가 붙음
+
+****
+
+## 4. 발사체 다듬기
+
+1. is trigger을 활성화하여 총알끼리의 충돌을 허용하지 않도록 함
+2. Input.GetButton으로 발사 버튼 적용
+3. 발사 딜레이 로직을 위한 변수 생성 (최대 딜레이, 현재의 딜레이)
+4. 현재 딜레이 변수에 Time.deltaTime을 계속 더하여 시간을 계산함
+5. 현재 딜레이가 맥스 딜레이 값보다 작다면 그냥 return시켜 딜레이 구현
+6. 총알을 쏜 다음에는 딜레이 변수 0으로 초기화
+
+****
+
+## 5. 발사체 파워
+
+1. 파워 변수를 생성하여 이에 따라 총알 개수나 종류를 변경함
+  - 총알 개수 변경 시에 총알이 같은 위치에서 생성되지 않도록 조정 필요
+    - transform.position(플레이어 위치)에 Vector3.right, left 단위벡터를 더해 위치 조절.
+      -transform 을 사용할 땐 Vector 3 사용하기   
+    - 1칸씩(1 unit) 씩 이동하므로 잘 조절해야함 (Vector3.left*0.3 이런 식으로) 
