@@ -1,0 +1,11 @@
+# ninja log v5
+273	702	7379104641537656	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5a4e95089060016d
+707	1589	7379104647193759	C:/Users/User/Documents/GitHub/LetsLearnUnity_Study/Sihyeon/Jellygame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5h1w366k/obj/armeabi-v7a/libswappywrapper.so	7c655bb49753dffe
+67	2193	7379104655680767	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	7ef5423e056408aa
+106	2201	7379104656433890	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	82d29dec2564fa8
+194	2231	7379104656318173	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	faae662503a1cf9f
+34	2429	7379104658812342	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	865dcd57df44cc3f
+232	2478	7379104659238551	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a607386f4f1dc5c7
+150	2842	7379104662789029	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	5aa4d06e0454fe75
+2	2889	7379104663371541	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	18883cea1227ab31
+2890	3382	7379104666798725	C:/Users/User/Documents/GitHub/LetsLearnUnity_Study/Sihyeon/Jellygame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/5h1w366k/obj/armeabi-v7a/libgame.so	c9c91382e17db4a1
